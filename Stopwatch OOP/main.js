@@ -8,6 +8,7 @@ let min = 0
 let hour = 0
 let int = null
 let startingTime = 0
+let deltaTime = 0
 
 class StopWatch {
     constructor(startTime = 0, endTime = 0, duration = 0, ms = 0, s = 0, m = 0, h = 0) {
@@ -44,13 +45,15 @@ class StopWatch {
         this.duration = 0
         clearInterval(int);
         [milSec, sec, min, hour] = [0, 0, 0, 0]
-        timerDisplayEl.innerHTML = '00 : 00 : 00 : 00 '
+        timerDisplayEl.innerHTML = '00 : 00 : 00 : 000'
     }
     displayTime() {
         let now = new Date()
-        let currentTime = now.getTime() - startingTime.getTime()
+        let currentTime = 0
+        
+        currentTime = now.getTime() - startingTime.getTime()
         console.log(currentTime)
-
+        deltaTime = currentTime
         let fms = currentTime
         let fs = fms / 1000
         let fm = fs / 60
@@ -98,6 +101,7 @@ stopBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     sw.reset()
     currentTime = 0
+    deltaTime = 0
     startingTime = null
 })
 
