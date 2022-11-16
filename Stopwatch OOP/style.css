@@ -2,13 +2,15 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(10, 10, 10);
 }
 
 main {
     margin: 0 auto;
     text-align: center;
     align-content: center;
-    background-color: rgb(169, 169, 237);
+    width: 70%;
 }
 
 h1 {
@@ -18,6 +20,22 @@ h1 {
     margin: 1rem auto;
     padding: 1rem 0;
     width: 50%;
+    font-family: monospace;
+    font-size: 3rem;
+}
+
+h2 {
+    color: white;
+    padding: 2rem;
+}
+
+span {
+    color: rgb(254,211,64);
+}
+
+img {
+    width: 40%;
+    max-height: 305px;
 }
 
 #btnSection {
@@ -32,18 +50,37 @@ h1 {
     padding: 1rem 2.5rem;
     border-radius: 5px;
     border: none;
-    color: white;
-    font-weight: bold;
+    color: black;
+    font-weight: 700;
 }
 
 #startTimer {
-    background-color: rgb(3, 232, 19);
+    background-color: rgb(254,211,64);
 }
 
 #stopTimer {
-    background-color: rgb(255, 51, 51);
+    background-color: rgb(234,91,51);
 }
 
 #resetTimer {
-    background-color: rgb(32, 3, 255);
+    background-color: rgb(3, 238, 255);
+}
+
+#startTimer:hover, #stopTimer:hover, #resetTimer:hover {
+    transform: scale(1.25);
+}
+
+#startTimer:active {
+    border: 1px solid green;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    h1 {
+        font-size: 2rem;
+        width: 70%;
+    }
 }

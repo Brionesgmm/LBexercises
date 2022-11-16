@@ -7,11 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <main>
-        <h1 id="timerDisplay">00 : 00 : 00 : 00</h1>
+        <h2><span>Pika</span> Stopwatch</h2>
+        <h1 id="timerDisplay">00 : 00 : 00 : 000</h1>
+        <img id="pikaHap" src="/imgs/pikaExcited.png" alt="pikachu being happy" class="hidden">
+        <img id="pikaAng" src="/imgs/pikaAngry.png" alt="pikachu being mad" class="hidden">
+        <img id="pikaSle" src="/imgs/pikaSleep.png" alt="pikachu being sleeply">
         <section id="btnSection">
             <button class="btn" id="startTimer">Start</button>
             <button class="btn" id="stopTimer">Stop</button>
