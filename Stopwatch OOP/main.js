@@ -2,6 +2,9 @@ const startBtn = document.querySelector('#startTimer')
 const stopBtn = document.querySelector('#stopTimer')
 const resetBtn = document.querySelector('#resetTimer')
 const timerDisplayEl = document.querySelector('#timerDisplay')
+const pikaHapImg = document.querySelector('#pikaHap')
+const pikaAngImg = document.querySelector('#pikaAng')
+const pikaSleImg = document.querySelector('#pikaSle')
 
 class StopWatch {
     constructor(startTime = 0, endTime = 0, duration = 0, ms = 0, s = 0, m = 0, h = 0) {
@@ -70,12 +73,30 @@ let sw = new StopWatch()
 
 startBtn.addEventListener('click', () => {
     sw.start()
+    const audio = new Audio()
+    audio.src="/sounds/pikaHappySound.wav"
+    audio.play()
+    pikaHapImg.classList.remove('hidden')
+    pikaAngImg.classList.add('hidden')
+    pikaSleImg.classList.add('hidden')
 })
 
 stopBtn.addEventListener('click', () => {
     sw.stop()
+    const audio = new Audio()
+    audio.src="/sounds/pikaMadSound.wav"
+    audio.play()
+    pikaHapImg.classList.add('hidden')
+    pikaAngImg.classList.remove('hidden')
+    pikaSleImg.classList.add('hidden')
 })
 
 resetBtn.addEventListener('click', () => {
     sw.reset()
+    const audio = new Audio()
+    audio.src="/sounds/pikaSleepSound.wav"
+    audio.play()
+    pikaHapImg.classList.add('hidden')
+    pikaAngImg.classList.add('hidden')
+    pikaSleImg.classList.remove('hidden')
 })
